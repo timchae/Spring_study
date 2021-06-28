@@ -44,7 +44,7 @@ public class Week2Application {
                 System.out.println(course.getTutor());
             }
 
-            courseRepository.deleteAll();
+
         };
     }
 }
