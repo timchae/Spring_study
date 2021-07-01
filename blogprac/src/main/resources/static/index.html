@@ -2,36 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta property="og:title" content="MY BLOG">
+    <meta property="og:description" content="나만의 블로그">
+    <meta property="og:image" content="images/ogimg">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <script src="basic.js"></script>
-    <title>Hello Bulma!</title>
+    <link href="images/logo.jpeg" rel="shortcut icon" type="image/x-icon">
+    <title>My Blog</title>
+    <style>
+        @media(max-width: 800px) {
+            .smallsreen {
+                width: 80%;
+                margin: auto;
+            }
+        }
 
+        @media(min-width: 800px) {
+            .largesreen {
+                width: 40%;
+                margin: auto;
+            }
+        }
+
+        @media(min-width: 800px) {
+            .largepostscreen2 {
+                width: 70%;
+                margin: auto;
+            }
+        }
+
+        @media(min-width: 800px) {
+            .largepostscreen {
+                width: 80%;
+                margin: auto;
+            }
+        }
+
+        @media(max-width: 800px) {
+            .smallpostscreen {
+                width: 100%;
+                margin: auto;
+            }
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" onclick="reload()">
-            <img src="images/logo.jpeg" width="30" height="30">
-        </a>
-    </div>
+<!--<nav class="navbar" role="navigation" aria-label="main navigation">-->
+<!--    <div class="navbar-brand">-->
+<!--        <a class="navbar-item" onclick="reload()">-->
+<!--            <img src="images/logo.jpeg" width="30" height="30">-->
+<!--        </a>-->
+<!--    </div>-->
 
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-            <a class="navbar-item" onclick="reload()">
-                Home
-            </a>
-        </div>
-        <div class="navbar-end">
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a onclick="post()" class="button is-primary" style="background-color: #000000">
-                        글쓰기
-                    </a>
-                </div>
+<!--    <div id="navbarBasicExample" class="navbar-menu">-->
+<!--        <div class="navbar-start">-->
+<!--            <a class="navbar-item" onclick="reload()">-->
+<!--                Home-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="navbar-end">-->
+<!--            <div class="navbar-item">-->
+<!--                <div class="buttons">-->
+<!--                    <a onclick="post()" class="button is-primary" style="background-color: #000000">-->
+<!--                        글쓰기-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+        <a class="navbar-brand" onclick="reload()">MY BLOG</a>
+        <button onclick="post()" class="navbar-toggler" style="background-color: black; color: aliceblue" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span >글쓰기</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a onclick="post()" class="nav-link active" aria-current="page">글쓰기</a>
             </div>
         </div>
     </div>
@@ -76,7 +128,7 @@
         </footer>
     </div>
 </div>
-<div id="post-cards" style="margin: auto; width: 40%">
+<div id="post-cards" class="smallsreen largesreen">
     <div class="card mb-3" onclick="posth(1)">
         <img src="images/tim.jpeg" class="card-img-top" alt="...">
         <div class="card-body">

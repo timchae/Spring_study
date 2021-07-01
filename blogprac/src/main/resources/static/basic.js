@@ -60,14 +60,14 @@ function editPost(id){
 function addOnePost(id, name, title, contents, modifiedAt, url){
     $('#one_post').empty();
     let temphtml =`<div>
-                        <div class="card" style="width: 70%; margin: auto">
+                        <div class="card largepostscreen2 smallpostscreen">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img src="${url}" alt="Placeholder image">
                                 </figure>
                             </div>
                         </div>
-                        <section class="section" style="width: 80%; margin: auto">
+                        <section class="section largepostscreen smallpostscreen">
                             <div class="tile is-ancestor">
                                 <div class="tile is-parent">
                                     <div class="tile is-child box">
