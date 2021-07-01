@@ -36,6 +36,26 @@
         </div>
     </div>
 </nav>
+<div id="postingedit" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">
+                <input id="titlee" class="input" type="text" placeholder="Title">
+                <input id="namee" class="input" type="text" placeholder="Name">
+            </p>
+            <button onclick="post_close()" class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <textarea id="contentse" class="textarea" placeholder="Contents"></textarea>
+            <input id="img_urle" class="input" type="text" placeholder="img url">
+        </section>
+        <footer class="modal-card-foot">
+            <button onclick="editsave()" class="button is-success" style="background-color: black">Save changes</button>
+            <button onclick="post_close()" class="button">Cancel</button>
+        </footer>
+    </div>
+</div>
 <div id="posting" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
@@ -48,6 +68,7 @@
         </header>
         <section class="modal-card-body">
             <textarea id="contents" class="textarea" placeholder="Contents"></textarea>
+            <input id="img_url" class="input" type="text" placeholder="img url">
         </section>
         <footer class="modal-card-foot">
             <button onclick="addPost()" class="button is-success" style="background-color: black">Save changes</button>

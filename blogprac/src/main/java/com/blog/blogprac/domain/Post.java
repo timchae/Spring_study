@@ -25,16 +25,20 @@ public class Post extends TimeStamped{
     @Column(nullable = false)
     private String contents;
 
+    private String url;
+
     public Post(PostRequestDto requestDto){
         this.name = requestDto.getName();
         this.title = requestDto.getTitle();
         this.contents = requestDto.getContents();
+        this.url = requestDto.getUrl();
     }
 
     public void update(PostRequestDto requestDto){
         this.name = requestDto.getName();
         this.contents = requestDto.getContents();
         this.title = requestDto.getTitle();
+        this.url = requestDto.getUrl();
 
     }
     /*필요 기능
