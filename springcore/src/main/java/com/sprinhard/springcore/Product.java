@@ -1,6 +1,5 @@
 package com.sprinhard.springcore;
 
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -41,5 +40,10 @@ public class Product extends Timestamped{
         this.link = requestDto.getLink();
         this.lprice = requestDto.getLprice();
         this.myprice = 0;
+    }
+
+    // 관심 상품의 가격 변경 시 사용합니다.
+    public void updateMyPrice(int price) {
+        this.myprice = price;
     }
 }
