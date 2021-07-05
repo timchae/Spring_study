@@ -2,9 +2,12 @@ package com.sprinhard.springcore.controller;
 
 import com.sprinhard.springcore.model.Product;
 import com.sprinhard.springcore.dto.ProductMypriceRequestDto;
+import com.sprinhard.springcore.security.UserDetailsImpl;
 import com.sprinhard.springcore.service.ProductService;
 import com.sprinhard.springcore.dto.ProductRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,20 +24,29 @@ public class ProductController {
         this.productService = productService;
     }
 
-    // 등록된 전체 상품 목록 조회
+    // 로그인한 회원이 등록한 상품들 조회
     @GetMapping("/api/products")
-    public List<Product> getProducts(){
-        List<Product> products = productService.getProducts();
-        // 응답 보내기
-        return products;
+    public List<Product> getProducts(@AuthenticationPrincipal UserDetailsImpl userDetails) {
+        Long userId = userDetails.getUser().getId();
+        return productService.getProducts(userId);
     }
 
     // 신규 상품 등록
     @PostMapping("/api/products")
-    public Product createProduct(@RequestBody ProductRequestDto requestDto){
-        Product product = productService.createProduct(requestDto);
+    public Product createProduct(@RequestBody ProductRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        // 로그인 되어 있는 ID
+        Long userId = userDetails.getUser().getId();
+
+        Product product = productService.createProduct(requestDto, userId);
         // 응답 보내기
         return product;
+    }
+
+    // (관리자용) 등록된 모든 상품 목록 조회
+    @Secured("ROLE_ADMIN")
+    @GetMapping("/api/admin/products")
+    public List<Product> getAllProducts() {
+        return productService.getAllProducts();
     }
 
     // 설정 가격 변경
