@@ -1,5 +1,7 @@
-package com.sprinhard.springcore;
+package com.sprinhard.springcore.controller;
 
+import com.sprinhard.springcore.util.NaverShopSearch;
+import com.sprinhard.springcore.dto.ItemDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

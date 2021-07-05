@@ -1,5 +1,6 @@
-package com.sprinhard.springcore;
+package com.sprinhard.springcore.util;
 
+import com.sprinhard.springcore.dto.ItemDto;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.*;

@@ -1,4 +1,4 @@
-package com.sprinhard.springcore;
+package com.sprinhard.springcore.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.sprinhard.springcore;
+package com.sprinhard.springcore.model;
 
 import lombok.Getter;
 import lombok.Setter;
